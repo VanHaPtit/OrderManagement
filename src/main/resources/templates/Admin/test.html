@@ -1,0 +1,220 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Login Form</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">-->
+<!--    <style>-->
+<!--        body {-->
+<!--          background-color: #f7f8fa;-->
+<!--          font-family: Arial, sans-serif;-->
+<!--        }-->
+
+<!--        .container {-->
+<!--          max-width: 450px;-->
+<!--          margin: 5% auto;-->
+<!--          padding: 20px;-->
+<!--          background-color: #fff;-->
+<!--          border-radius: 10px;-->
+<!--          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        .container img {-->
+<!--          width: 100px;-->
+<!--          display: block;-->
+<!--          margin: 0 auto 20px;-->
+<!--        }-->
+
+<!--        .title {-->
+<!--          text-align: center;-->
+<!--          margin-bottom: 20px;-->
+<!--          font-size: 24px;-->
+<!--          color: #333;-->
+<!--        }-->
+
+<!--        .social-login {-->
+<!--          display: flex;-->
+<!--          justify-content: center;-->
+<!--          gap: 10px;-->
+<!--          margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        .social-login button {-->
+<!--          background-color: #f7f8fa;-->
+<!--          border: none;-->
+<!--          padding: 10px;-->
+<!--          border-radius: 50%;-->
+<!--          font-size: 18px;-->
+<!--          color: #555;-->
+<!--          cursor: pointer;-->
+<!--          transition: background-color 0.3s;-->
+<!--        }-->
+
+<!--        .social-login button:hover {-->
+<!--          background-color: #ddd;-->
+<!--        }-->
+
+<!--        .divider {-->
+<!--          display: flex;-->
+<!--          align-items: center;-->
+<!--          text-align: center;-->
+<!--          margin: 20px 0;-->
+<!--        }-->
+
+<!--        .divider::before,-->
+<!--        .divider::after {-->
+<!--          content: '';-->
+<!--          flex: 1;-->
+<!--          height: 1px;-->
+<!--          background: #ccc;-->
+<!--        }-->
+
+<!--        .divider::before {-->
+<!--          margin-right: 10px;-->
+<!--        }-->
+
+<!--        .divider::after {-->
+<!--          margin-left: 10px;-->
+<!--        }-->
+
+<!--        form {-->
+<!--          display: flex;-->
+<!--          flex-direction: column;-->
+<!--        }-->
+
+<!--        .form-outline {-->
+<!--          position: relative;-->
+<!--          margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        .form-outline input {-->
+<!--          width: 100%;-->
+<!--          padding: 10px;-->
+<!--          font-size: 16px;-->
+<!--          border: 1px solid #ccc;-->
+<!--          border-radius: 5px;-->
+<!--          outline: none;-->
+<!--          transition: border-color 0.3s;-->
+<!--        }-->
+
+<!--        .form-outline input:focus {-->
+<!--          border-color: #007bff;-->
+<!--        }-->
+
+<!--        .form-outline label {-->
+<!--          position: absolute;-->
+<!--          top: -10px;-->
+<!--          left: 10px;-->
+<!--          background-color: #fff;-->
+<!--          padding: 0 5px;-->
+<!--          font-size: 14px;-->
+<!--          color: #555;-->
+<!--        }-->
+
+<!--        .form-check {-->
+<!--          display: flex;-->
+<!--          align-items: center;-->
+<!--        }-->
+
+<!--        .form-check input {-->
+<!--          margin-right: 10px;-->
+<!--        }-->
+
+<!--        .form-check label {-->
+<!--          font-size: 14px;-->
+<!--          color: #555;-->
+<!--        }-->
+
+<!--        .forgot-password {-->
+<!--          text-align: right;-->
+<!--          margin-top: 10px;-->
+<!--        }-->
+
+<!--        .forgot-password a {-->
+<!--          color: #007bff;-->
+<!--          text-decoration: none;-->
+<!--          font-size: 14px;-->
+<!--        }-->
+
+<!--        .forgot-password a:hover {-->
+<!--          text-decoration: underline;-->
+<!--        }-->
+
+<!--        .btn-primary {-->
+<!--          background-color: #007bff;-->
+<!--          color: #fff;-->
+<!--          padding: 10px;-->
+<!--          font-size: 16px;-->
+<!--          border: none;-->
+<!--          border-radius: 5px;-->
+<!--          cursor: pointer;-->
+<!--          transition: background-color 0.3s;-->
+<!--        }-->
+
+<!--        .btn-primary:hover {-->
+<!--          background-color: #0056b3;-->
+<!--        }-->
+
+<!--        .register {-->
+<!--          text-align: center;-->
+<!--          margin-top: 20px;-->
+<!--        }-->
+
+<!--        .register a {-->
+<!--          color: #007bff;-->
+<!--          text-decoration: none;-->
+<!--          font-size: 14px;-->
+<!--        }-->
+
+<!--        .register a:hover {-->
+<!--          text-decoration: underline;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" alt="Sample image">-->
+<!--    <h2 class="title">Welcome Back</h2>-->
+
+<!--    <div class="social-login">-->
+<!--        <button><i class="fab fa-facebook-f"></i></button>-->
+<!--        <button><i class="fab fa-twitter"></i></button>-->
+<!--        <button><i class="fab fa-linkedin-in"></i></button>-->
+<!--    </div>-->
+
+<!--    <div class="divider">Or</div>-->
+
+<!--    <form>-->
+<!--        <div class="form-outline">-->
+<!--            <input type="email" id="email" placeholder=" " />-->
+<!--            <label for="email">Email address</label>-->
+<!--        </div>-->
+
+<!--        <div class="form-outline">-->
+<!--            <input type="password" id="password" placeholder=" " />-->
+<!--            <label for="password">Password</label>-->
+<!--        </div>-->
+
+<!--        <div class="form-check">-->
+<!--            <input type="checkbox" id="remember-me" />-->
+<!--            <label for="remember-me">Remember me</label>-->
+<!--        </div>-->
+
+<!--        <div class="forgot-password">-->
+<!--            <a href="#!">Forgot password?</a>-->
+<!--        </div>-->
+
+<!--        <button type="submit" class="btn-primary">Login</button>-->
+
+<!--        <div class="register">-->
+<!--            <p>Don't have an account? <a href="#!">Register</a></p>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->
+

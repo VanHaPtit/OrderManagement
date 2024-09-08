@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        /* Định dạng chung cho trang đăng ký */
+        body.signup-page {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .signup-box {
+            width: 380px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            border-radius: 8px;
+            border-top: 3px solid #007bff;
+            box-shadow: none;
+        }
+
+        .card-header {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 15px;
+            border-bottom: none;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card-header .h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .signup-box-msg {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666666;
+        }
+
+        .input-group.mb-3 {
+            width: 400px;
+            margin-bottom: 1.7rem;
+        }
+
+        .input-group.mb-3 input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .input-group .form-control {
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            border-color: #ced4da;
+        }
+
+        .input-group-append .input-group-text {
+            background-color: #e9ecef;
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+            border-color: #ced4da;
+        }
+
+        .input-group-text .fas {
+            color: #007bff;
+        }
+
+        /* Định dạng cho nút "Sign Up" */
+        .btn-primary {
+            font-size: 18px;
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 6px;
+            padding: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .btn-block {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .btn-primary.btn-block {
+            font-size: 18px;
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 4px;
+            padding: 7px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary.btn-block:hover {
+            background-color: #0056b3;
+        }
+
+
+
+        .form-group {
+    margin-bottom: 1.7rem;
+}
+
+.form-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-select {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-select option {
+    padding: 10px;
+}
+    </style>
+</head>
+<body class="signup-page">
+<div class="signup-box">
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="@{/signup}" class="h1"><b>Sign Up</b></a>
+        </div>
+        <div class="card-body">
+            <p class="signup-box-msg">Register a new membership</p>
+            <form th:action="@{/api/auth/signup}" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="UserName" name="userName" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Email" name="email" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password" name="passWord" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <select class="form-label" id="role" name="role" multiple>
+                        <option value="ROLE_USER">User</option>
+                        <option value="ROLE_ADMIN">Admin</option>
+                        <option value="ROLE_MODERATOR">Moderator</option>
+                    </select>
+                </div>
+
+
+
+<!--                <div class="form-group">-->
+<!--                    <label for="role" class="form-label">Role:</label>-->
+<!--                    <select class="form-control form-select" id="role" name="role" multiple>-->
+<!--                        <option value="user">User</option>-->
+<!--                        <option value="admin">Admin</option>-->
+<!--                        <option value="mod">Moderator</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -43,8 +43,6 @@ public class ProductController {
         return modelAndView;
     }
 
-
-
     @PostMapping("/CreateProduct")
     public ResponseEntity<?> createProduct(@ModelAttribute ProductDTO productDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -107,8 +105,6 @@ public class ProductController {
                         fileName.endsWith(".bmp") ||
                         fileName.endsWith(".webp")));
     }
-
-
 
     @GetMapping("/product")
     public ModelAndView showList(Model model , @RequestParam(value = "keyword", required = false) String keyword , @RequestParam(name ="pageNo",defaultValue = "1") Integer pageNo) {

@@ -20,6 +20,15 @@ repositories {
 dependencies {
 
 
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+
+
+
+
 	implementation 'org.springframework.boot:spring-boot-starter'
 
 
@@ -28,16 +37,25 @@ dependencies {
 	implementation 'com.google.oauth-client:google-oauth-client-jetty:1.31.6' // Phiên bản mới nhất
 
 
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+
+
+
 	implementation 'commons-io:commons-io:2.11.0'
 
 
-	// bảo mật Security
-	//	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
-//	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-//	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.2.5.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+//	 bảo mật Security
+		implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.2.5.RELEASE'
+
+	compileOnly 'org.projectlombok:lombok:1.18.30'  // Phiên bản mới nhất
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
 
-
+	implementation 'com.nimbusds:nimbus-jose-jwt:9.31'
 
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'

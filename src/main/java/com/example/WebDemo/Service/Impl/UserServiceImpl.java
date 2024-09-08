@@ -11,14 +11,63 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+//
+//@Service
+//public class UserServiceImpl implements UserService {
+//    @Autowired
+//    private UserRepository userRepository ;
+//
+//    @Override
+//    public Optional<User> findByUserName(String name) {
+//        return userRepository.findByUserName(name);
+//    }
+//
+//    @Override
+//    public void delete(Long id) {
+//        userRepository.deleteById(id);
+//    }
+//
+//    @Override
+//    public Page<User> findAll(Pageable pageInfo) {
+//        return userRepository.findAll(pageInfo);
+//    }
+//
+//    @Override
+//    public List<User> getAll() {
+//        return userRepository.findAll();
+//    }
+//
+//    @Override
+//    public Optional<User> findById(Long ID) {
+//        return userRepository.findById(ID);
+//    }
+//
+//    @Override
+//    public User save(User user) {
+//        return userRepository.save(user);
+//    }
+//
+//    @Override
+//    public List<User> findAll() {
+//        return userRepository.findAll();
+//    }
+//
+//    @Override
+//    public boolean isUserExists(String userName, String password) {
+//        return userRepository.findByUsernameAndPassword(userName, password).isPresent();
+//    }
+//}
+
+
+
+
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository ;
 
-    @Override
-    public User findByUserName(String name) {
+    public Optional<User> findByUserName(String name) {
         return userRepository.findByUserName(name);
     }
 
